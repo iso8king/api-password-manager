@@ -14,12 +14,12 @@ const register = async(req,res,next)=>{
 const login = async(req,res,next)=>{
     try {
         const result = await userService.login(req.body)
-        res.cookie('accessToken', result.token_access, {
-             httpOnly: true,
-             secure: false,
-             sameSite: 'lax',
-             maxAge:  60 * 60 * 1000, 
-            path: '/'
+        res.cookie("accessToken", token, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+            path: "/",
+            maxAge: 60 * 60 * 1000,
         });
         res.status(200).json({
             data : result
