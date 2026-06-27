@@ -7,8 +7,6 @@
   "scripts": {
     "postinstall": "prisma generate",
     "start": "node src/app.js"
-}
-
   },
   "author": "",
   "license": "ISC",
