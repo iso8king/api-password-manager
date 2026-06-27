@@ -23,7 +23,9 @@ web.use((err, req, res, next) => {
 });
 
 const corsOptions = {
-  origin: 'http://localhost:5173', 
+  origin: function (origin, callback) {
+    callback(null, true);
+  }, 
   credentials: true,
   methods: ['GET', 'POST', 'PUT','PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
