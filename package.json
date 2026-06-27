@@ -5,9 +5,11 @@
   "main": "app.js",
   "type" : "module",
   "scripts": {
-   "setup": "npm install && npx prisma generate",
-    "dev": "node index.js",
-    "start": "node index.js"
+   "scripts": {
+    "postinstall": "prisma generate",
+  "start": "node src/app.js"
+}
+
   },
   "author": "",
   "license": "ISC",
